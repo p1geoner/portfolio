@@ -1,0 +1,49 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "keyframes-name-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global", "local"]
+      }
+    ],
+    "custom-property-pattern": "^[a-z][a-zA-Z0-9-]*$",
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "theme",
+          "apply",
+          "variants",
+          "screen",
+          "layer",
+          "utility",
+          "custom-variant",
+          "source",
+          "plugin"
+        ]
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "theme",
+          "utility",
+          "custom-variant",
+          "source",
+          "plugin",
+          "apply"
+        ]
+      }
+    ],
+    "no-invalid-position-declaration": null,
+    "at-rule-no-deprecated": null,
+    "no-descending-specificity": null,
+    "declaration-property-value-no-unknown": null
+  },
+  "ignoreFiles": ["node_modules/**", ".next/**", "coverage/**"]
+}

@@ -1,0 +1,174 @@
+{
+  "common": {
+    "skipToContent": "Перейти к содержимому",
+    "menu": "Меню",
+    "close": "Закрыть",
+    "copy": "Скопировать",
+    "copied": "Скопировано",
+    "backToTop": "Наверх",
+    "loading": "Загрузка",
+    "estimated": "оценка",
+    "present": "по настоящее время",
+    "openExternal": "Открыть в новой вкладке"
+  },
+  "nav": {
+    "ariaLabel": "Основная навигация",
+    "footerLabel": "Навигация в подвале",
+    "localeSwitcher": "Язык интерфейса",
+    "themeSwitcher": "Тема оформления",
+    "theme": {
+      "light": "Светлая",
+      "dark": "Тёмная",
+      "system": "Как в системе"
+    }
+  },
+  "home": {
+    "heroBadge": "Открыт к офферам",
+    "primaryCta": "Смотреть кейсы",
+    "secondaryCta": "Написать мне",
+    "aboutTitle": "Коротко о себе",
+    "factsTitle": "В цифрах",
+    "flagshipTitle": "Кейсы",
+    "flagshipSubtitle": "Продукты, где я закрывал архитектуру, сложные сценарии и доведение до прода",
+    "allProjects": "Все проекты",
+    "showcase": {
+      "openCase": "Открыть кейс",
+      "sliderLabel": "Контент кейса «{name}»",
+      "panelsLabel": "Панели кейса",
+      "panelCover": "Интерфейс",
+      "panelHighlights": "Задачи",
+      "panelStack": "Стек",
+      "panelArchitecture": "Архитектура",
+      "prevPanel": "Предыдущая панель",
+      "nextPanel": "Следующая панель",
+      "mediaPlaceholder": "Материалы готовятся"
+    },
+
+    "stackTitle": "Основной стек",
+    "stackSubtitle": "Инструменты, с которыми работаю каждый день",
+    "stackCta": "Весь стек",
+    "stackHint": "Цифра — в скольких проектах встречалась технология",
+    "experienceTitle": "Опыт",
+    "experienceCta": "Смотреть опыт",
+    "contactTitle": "Давайте обсудим роль",
+    "contactText": "Ищу сильную продуктовую команду на Next.js / React. Пишите в Telegram или на почту — отвечаю быстро."
+  },
+  "projects": {
+    "title": "Проекты",
+    "subtitle": "Кейсы из продукта, админок, EdTech и фриланса — от архитектуры до прода",
+    "searchLabel": "Поиск по проектам",
+    "searchPlaceholder": "Технология, продукт или задача",
+    "searchHint": "Поиск работает по названию, описанию, стеку и задачам",
+    "filtersTitle": "Фильтры",
+    "filterByStack": "По технологии",
+    "filterByTier": "По значимости",
+    "filterByCategory": "По типу",
+    "resetFilters": "Сбросить",
+    "resultsCount": "{count, plural, one {# проект} few {# проекта} many {# проектов} other {# проекта}}",
+    "emptyTitle": "Ничего не нашлось",
+    "emptyText": "Попробуйте изменить запрос или сбросить фильтры.",
+    "suggestions": "Возможно, вы имели в виду",
+    "openCase": "Открыть кейс",
+    "mediaPlaceholder": "Материалы готовятся",
+    "ndaBadge": "Под NDA",
+    "ndaHint": "Детали и код закрыты соглашением: описываю задачи и решения без раскрытия внутренностей.",
+    "tier": {
+      "flagship": "Флагман",
+      "major": "Крупный проект",
+      "support": "Поддержка и развитие",
+      "pet": "Личный проект"
+    },
+    "category": {
+      "product": "Продукт",
+      "admin": "Админ-панель",
+      "library": "Библиотека",
+      "infrastructure": "Инфраструктура",
+      "hackathon": "Хакатон"
+    }
+  },
+  "project": {
+    "backToProjects": "Все проекты",
+    "roleLabel": "Роль",
+    "periodLabel": "Период",
+    "teamLabel": "Команда",
+    "companyLabel": "Компания",
+    "teamValue": "{count, plural, one {# человек} few {# человека} many {# человек} other {# человека}}",
+    "highlightsTitle": "Что сделано",
+    "architectureTitle": "Архитектура фронтенда",
+    "metricsTitle": "Результаты",
+    "stackTitle": "Стек",
+    "galleryTitle": "Интерфейс",
+    "galleryEmpty": "Скриншоты этого проекта пока не опубликованы.",
+    "relatedTitle": "Связанные проекты",
+    "linksTitle": "Ссылки",
+    "linkProduction": "Открыть сайт",
+    "linkRepository": "Репозиторий",
+    "linkPublication": "Публикация",
+    "linksEmpty": "Публичных ссылок нет.",
+    "mediaPlaceholder": "Материалы готовятся",
+    "sectionKind": {
+      "context": "Контекст",
+      "challenge": "Задача",
+      "solution": "Решение",
+      "result": "Результат"
+    }
+  },
+  "experience": {
+    "title": "Опыт",
+    "subtitle": "Продуктовая команда, фриланс, хакатоны и учёба параллельно с работой",
+    "workTitle": "Работа",
+    "educationTitle": "Образование",
+    "gradesTitle": "Рост в компании",
+    "responsibilitiesTitle": "Задачи",
+    "achievementsTitle": "Достижения",
+    "projectsTitle": "Проекты этого места работы",
+    "durationYears": "{count, plural, one {# год} few {# года} many {# лет} other {# года}}",
+    "durationMonths": "{count, plural, one {# месяц} few {# месяца} many {# месяцев} other {# месяца}}",
+    "totalLabel": "Общий опыт"
+  },
+  "stack": {
+    "title": "Стек",
+    "subtitle": "Технологии, сгруппированные по назначению",
+    "levelTitle": "Уровень владения",
+    "usedIn": "{count, plural, one {# проект} few {# проекта} many {# проектов} other {# проекта}}",
+    "group": {
+      "core": "Основа",
+      "framework": "Фреймворки",
+      "state": "Состояние и данные",
+      "styling": "Стилизация",
+      "quality": "Качество",
+      "infrastructure": "Инфраструктура",
+      "practice": "Практики"
+    },
+    "level": {
+      "advanced": "Уверенно и глубоко",
+      "confident": "Уверенно",
+      "working": "Рабочий уровень"
+    }
+  },
+  "contacts": {
+    "title": "Контакты",
+    "subtitle": "Пишите — отвечаю в течение дня",
+    "preferredTitle": "Предпочтительно",
+    "otherTitle": "Ещё",
+    "locationLabel": "Локация",
+    "languagesLabel": "Языки",
+    "emailHint": "Нажмите, чтобы скопировать адрес",
+    "channel": {
+      "email": "Почта",
+      "telegram": "Telegram",
+      "github": "GitHub",
+      "phone": "Телефон"
+    }
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "text": "Возможно, адрес изменился или страницы никогда не существовало.",
+    "cta": "На главную"
+  },
+  "footer": {
+    "rights": "Все права защищены",
+    "builtWith": "Собрано на Next.js, TypeScript и Feature-Sliced Design",
+    "sourceHint": "Открыт к предложениям"
+  }
+}

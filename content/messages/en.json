@@ -1,0 +1,174 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "menu": "Menu",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied",
+    "backToTop": "Back to top",
+    "loading": "Loading",
+    "estimated": "estimate",
+    "present": "present",
+    "openExternal": "Open in a new tab"
+  },
+  "nav": {
+    "ariaLabel": "Main navigation",
+    "footerLabel": "Footer navigation",
+    "localeSwitcher": "Interface language",
+    "themeSwitcher": "Colour theme",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+  "home": {
+    "heroBadge": "Open to offers",
+    "primaryCta": "View case studies",
+    "secondaryCta": "Message me",
+    "aboutTitle": "About me",
+    "factsTitle": "In numbers",
+    "flagshipTitle": "Flagship cases",
+    "flagshipSubtitle": "Products where I owned architecture, hard scenarios, and shipping to production",
+    "allProjects": "All projects",
+    "showcase": {
+      "openCase": "Open case",
+      "sliderLabel": "Case content for “{name}”",
+      "panelsLabel": "Case panels",
+      "panelCover": "Interface",
+      "panelHighlights": "Tasks",
+      "panelStack": "Stack",
+      "panelArchitecture": "Architecture",
+      "prevPanel": "Previous panel",
+      "nextPanel": "Next panel",
+      "mediaPlaceholder": "Media coming soon"
+    },
+
+    "stackTitle": "Core stack",
+    "stackSubtitle": "Tools I work with every day",
+    "stackCta": "Full stack",
+    "stackHint": "The number is how many projects use the tech",
+    "experienceTitle": "Experience",
+    "experienceCta": "View experience",
+    "contactTitle": "Let’s talk about the role",
+    "contactText": "Looking for a strong product team on Next.js / React. Reach me on Telegram or email — I reply fast."
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Product, admin, EdTech and freelance cases — from architecture to production",
+    "searchLabel": "Search projects",
+    "searchPlaceholder": "Technology, product or problem",
+    "searchHint": "Search covers names, descriptions, stack and problems",
+    "filtersTitle": "Filters",
+    "filterByStack": "By technology",
+    "filterByTier": "By significance",
+    "filterByCategory": "By type",
+    "resetFilters": "Reset",
+    "resultsCount": "{count, plural, one {# project} other {# projects}}",
+    "emptyTitle": "Nothing found",
+    "emptyText": "Try changing the query or resetting the filters.",
+    "suggestions": "Did you mean",
+    "openCase": "Open case study",
+    "mediaPlaceholder": "Materials coming soon",
+    "ndaBadge": "Under NDA",
+    "ndaHint": "Details and code are covered by an agreement: I describe the problems and solutions without exposing internals.",
+    "tier": {
+      "flagship": "Flagship",
+      "major": "Major project",
+      "support": "Support and evolution",
+      "pet": "Personal project"
+    },
+    "category": {
+      "product": "Product",
+      "admin": "Admin panel",
+      "library": "Library",
+      "infrastructure": "Infrastructure",
+      "hackathon": "Hackathon"
+    }
+  },
+  "project": {
+    "backToProjects": "All projects",
+    "roleLabel": "Role",
+    "periodLabel": "Period",
+    "teamLabel": "Team",
+    "companyLabel": "Company",
+    "teamValue": "{count, plural, one {# person} other {# people}}",
+    "highlightsTitle": "What I did",
+    "architectureTitle": "Frontend architecture",
+    "metricsTitle": "Outcomes",
+    "stackTitle": "Stack",
+    "galleryTitle": "Interface",
+    "galleryEmpty": "Screenshots for this project are not published yet.",
+    "relatedTitle": "Related projects",
+    "linksTitle": "Links",
+    "linkProduction": "Open website",
+    "linkRepository": "Repository",
+    "linkPublication": "Publication",
+    "linksEmpty": "No public links.",
+    "mediaPlaceholder": "Materials coming soon",
+    "sectionKind": {
+      "context": "Context",
+      "challenge": "Problem",
+      "solution": "Solution",
+      "result": "Outcome"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Product team, freelance, hackathons, and studying alongside work",
+    "workTitle": "Work",
+    "educationTitle": "Education",
+    "gradesTitle": "Growth in the company",
+    "responsibilitiesTitle": "Responsibilities",
+    "achievementsTitle": "Achievements",
+    "projectsTitle": "Projects from this role",
+    "durationYears": "{count, plural, one {# year} other {# years}}",
+    "durationMonths": "{count, plural, one {# month} other {# months}}",
+    "totalLabel": "Total experience"
+  },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Technologies grouped by purpose",
+    "levelTitle": "Proficiency",
+    "usedIn": "{count, plural, one {# project} other {# projects}}",
+    "group": {
+      "core": "Foundation",
+      "framework": "Frameworks",
+      "state": "State and data",
+      "styling": "Styling",
+      "quality": "Quality",
+      "infrastructure": "Infrastructure",
+      "practice": "Practices"
+    },
+    "level": {
+      "advanced": "Deep and confident",
+      "confident": "Confident",
+      "working": "Working knowledge"
+    }
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "Drop me a line — I reply within a day",
+    "preferredTitle": "Preferred",
+    "otherTitle": "Also",
+    "locationLabel": "Location",
+    "languagesLabel": "Languages",
+    "emailHint": "Click to copy the address",
+    "channel": {
+      "email": "Email",
+      "telegram": "Telegram",
+      "github": "GitHub",
+      "phone": "Phone"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The address may have changed, or the page never existed.",
+    "cta": "Go home"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "builtWith": "Built with Next.js, TypeScript and Feature-Sliced Design",
+    "sourceHint": "Open to offers"
+  }
+}

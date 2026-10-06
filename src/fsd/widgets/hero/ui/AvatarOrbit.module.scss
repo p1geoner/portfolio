@@ -1,0 +1,64 @@
+.measure {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.65rem;
+  height: 2.65rem;
+  padding: 0 0.65rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in oklab, var(--border-subtle) 70%, transparent);
+  background: color-mix(in oklab, var(--surface-raised) 90%, transparent);
+  box-shadow: var(--shadow-soft);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.symbolAccent {
+  color: var(--brand-on-surface);
+  border-color: color-mix(in oklab, var(--brand) 28%, var(--border-subtle));
+  background: color-mix(
+    in oklab,
+    var(--brand-surface) 72%,
+    var(--surface-raised)
+  );
+}
+
+@media (width >= 64rem) {
+  .symbol {
+    min-width: 2.9rem;
+    height: 2.9rem;
+    padding: 0 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anchor {
+    will-change: auto;
+  }
+}

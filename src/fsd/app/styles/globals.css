@@ -1,0 +1,230 @@
+@import 'tailwindcss';
+
+/*
+ * Тёмная тема переключается атрибутом на <html>, а не классом:
+ * атрибут ставится до первой отрисовки инлайновым скриптом, поэтому
+ * вспышки светлой темы не бывает.
+ */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jetbrains), ui-monospace, monospace;
+
+  /* Тёплая бумага и графитовые чернила: светлая база без синевы. */
+  --color-paper: #faf9f7;
+  --color-paper-raised: #fff;
+  --color-paper-sunken: #f2f0ec;
+  --color-ink: #14130f;
+  --color-ink-soft: #3d3a34;
+  --color-ink-muted: #6f6a61;
+  --color-line: #e2ded6;
+  --color-line-strong: #cdc7bc;
+  --color-accent: #c2410c;
+  --color-accent-soft: #f4e6de;
+  --color-accent-strong: #9a3412;
+  --color-support: #0f766e;
+  --radius-card: 1rem;
+  --radius-pill: 999px;
+  --shadow-soft:
+    0 1px 2px rgb(20 19 15 / 3%), 0 12px 32px -18px rgb(20 19 15 / 12%);
+  --shadow-lift:
+    0 2px 6px rgb(20 19 15 / 4%), 0 24px 48px -20px rgb(20 19 15 / 18%);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --spacing-section: 7rem;
+}
+
+/* Семантические переменные: компоненты обращаются только к ним. */
+:root {
+  --surface-page: var(--color-paper);
+  --surface-raised: var(--color-paper-raised);
+  --surface-sunken: var(--color-paper-sunken);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-soft);
+  --text-muted: var(--color-ink-muted);
+  --border-subtle: var(--color-line);
+  --border-strong: var(--color-line-strong);
+  --brand: var(--color-accent);
+  --brand-contrast: #fff;
+  --brand-surface: var(--color-accent-soft);
+
+  /*
+   * Отдельный оттенок для текста на подложке бренда: сам --brand на
+   * --brand-surface даёт контраст 4.24 и не проходит WCAG AA.
+   */
+  --brand-on-surface: var(--color-accent-strong);
+  --focus-ring: var(--color-accent);
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --surface-page: #12110f;
+  --surface-raised: #1b1a17;
+  --surface-sunken: #201e1a;
+  --text-primary: #f4f2ed;
+  --text-secondary: #cdc8bf;
+  --text-muted: #9b958a;
+  --border-subtle: #2c2a25;
+  --border-strong: #3d3a34;
+  --brand: #fb923c;
+  --brand-contrast: #1b1206;
+  --brand-surface: #2a1d12;
+  --brand-on-surface: #fdba74;
+  --focus-ring: #fb923c;
+
+  color-scheme: dark;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    text-size-adjust: 100%;
+
+    /* Нативный smooth отключаем: инерцию даёт Lenis. */
+    scroll-behavior: auto;
+
+    /* Учитываем липкую шапку при переходе по анкорям. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  /* Классы с дефисом выставляет Lenis, переименовать их нельзя. */
+  /* stylelint-disable selector-class-pattern */
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  /* stylelint-enable selector-class-pattern */
+
+  body {
+    margin: 0;
+    background-color: var(--surface-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-feature-settings: 'kern', 'liga', 'calt';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--brand-surface);
+    color: var(--text-primary);
+  }
+
+  /* Пользователь попросил меньше движения — отдаём статику. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/*
+ * Индикатор прокрутки на scroll-driven анимации: без обработчиков scroll
+ * и без JavaScript. Браузеры без поддержки просто не показывают полосу.
+ */
+@supports (animation-timeline: scroll()) {
+  @keyframes scrollProgressGrow {
+    from {
+      transform: scaleX(0);
+    }
+
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .scrollProgress {
+    transform: scaleX(0);
+    animation: scrollProgressGrow linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .scrollProgress {
+    display: none;
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility text-balance-tight {
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+}

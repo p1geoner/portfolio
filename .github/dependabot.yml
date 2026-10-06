@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      # Обновления Next, React и типов должны приходить вместе:
+      # порознь они ломают сборку из-за peer-зависимостей.
+      next-react:
+        patterns:
+          - 'next'
+          - 'next-*'
+          - 'react'
+          - 'react-dom'
+          - '@types/react*'
+      tooling:
+        patterns:
+          - 'eslint*'
+          - 'typescript*'
+          - 'prettier'
+          - 'stylelint*'
+
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly

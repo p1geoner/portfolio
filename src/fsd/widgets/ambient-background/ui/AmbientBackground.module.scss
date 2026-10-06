@@ -1,0 +1,124 @@
+.root {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.mesh,
+.blob,
+.grain {
+  position: absolute;
+  inset: 0;
+}
+
+.mesh {
+  background:
+    radial-gradient(
+      60% 50% at 12% 18%,
+      color-mix(in oklab, var(--brand) 14%, transparent) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 45% at 88% 12%,
+      color-mix(in oklab, var(--color-support) 10%, transparent) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      55% 40% at 70% 85%,
+      color-mix(in oklab, var(--brand) 8%, transparent) 0%,
+      transparent 70%
+    );
+  opacity: 0.9;
+}
+
+.blob {
+  width: 42vmax;
+  height: 42vmax;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.blobA {
+  top: -18%;
+  left: -12%;
+  background: color-mix(in oklab, var(--brand) 35%, transparent);
+  animation: driftA 28s var(--ease-in-out-soft) infinite alternate;
+}
+
+.blobB {
+  top: 35%;
+  right: -18%;
+  width: 36vmax;
+  height: 36vmax;
+  background: color-mix(in oklab, var(--color-support) 28%, transparent);
+  animation: driftB 34s var(--ease-in-out-soft) infinite alternate;
+}
+
+.blobC {
+  bottom: -22%;
+  left: 28%;
+  width: 40vmax;
+  height: 40vmax;
+  background: color-mix(in oklab, var(--brand) 18%, transparent);
+  animation: driftC 40s var(--ease-in-out-soft) infinite alternate;
+}
+
+.grain {
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+:global([data-theme='dark']) .grain {
+  mix-blend-mode: soft-light;
+  opacity: 0.07;
+}
+
+:global([data-theme='dark']) .mesh {
+  opacity: 0.55;
+}
+
+.root[data-static='true'] .blob {
+  animation: none;
+}
+
+@keyframes driftA {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(8%, 12%, 0) scale(1.12);
+  }
+}
+
+@keyframes driftB {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-10%, 8%, 0) scale(1.08);
+  }
+}
+
+@keyframes driftC {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(6%, -10%, 0) scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+}
