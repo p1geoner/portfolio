@@ -6,18 +6,20 @@ const withNextIntl = createNextIntlPlugin('./src/fsd/shared/i18n/request.ts');
 /**
  * Content-Security-Policy без nonce: nonce уникален на каждый ответ, а значит
  * страницы пришлось бы рендерить динамически и терять статическую генерацию.
- * Для сайта без пользовательского ввода и без сторонних скриптов выгоднее
- * оставить весь HTML статикой и жёстко закрыть остальные директивы.
+ * Для сайта без пользовательского ввода выгоднее оставить весь HTML статикой
+ * и жёстко закрыть остальные директивы.
  * 'unsafe-inline' в script-src нужен инлайновому загрузчику Next и скрипту
- * темы; сторонние источники скриптов при этом запрещены полностью.
+ * темы. Единственный сторонний скрипт — Vercel Web Analytics: в проде он
+ * отдаётся с того же origin (/_vercel/insights), в dev — с va.vercel-scripts.com.
+ * События уходят на vitals.vercel-insights.com.
  */
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://vitals.vercel-insights.com",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com",
   "media-src 'self'",
   "manifest-src 'self'",
   "worker-src 'self' blob:",

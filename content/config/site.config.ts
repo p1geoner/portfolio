@@ -27,7 +27,7 @@ export const siteConfig = {
   // Коды из Google Search Console и Яндекс.Вебмастера — вставить после деплоя.
   verification: {},
   features: {
-    speedInsights: false,
+    analytics: true,
     themeSwitcher: true,
     projectArchitecture: false,
   },

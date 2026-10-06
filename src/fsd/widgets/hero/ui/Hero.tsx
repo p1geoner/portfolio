@@ -11,7 +11,6 @@ import {
   Badge,
   ButtonLink,
   Container,
-  Magnetic,
   Prose,
   Reveal,
   Stagger,
@@ -89,12 +88,10 @@ export const Hero = () => {
 
           <Reveal delay={0.35}>
             <div className='flex flex-wrap items-center gap-3'>
-              <Magnetic>
-                <ButtonLink href='/projects'>
-                  {t('primaryCta')}
-                  <ArrowRightIcon />
-                </ButtonLink>
-              </Magnetic>
+              <ButtonLink href='/projects'>
+                {t('primaryCta')}
+                <ArrowRightIcon />
+              </ButtonLink>
               <ButtonLink href='/contacts' variant='secondary'>
                 {t('secondaryCta')}
               </ButtonLink>

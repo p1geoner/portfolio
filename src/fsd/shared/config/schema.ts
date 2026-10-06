@@ -21,8 +21,8 @@ export const siteConfigSchema = z.strictObject({
     yandex: z.string().optional(),
   }),
   features: z.strictObject({
-    /** Аналитика Vercel: единственный внешний скрипт, разрешённый в CSP. */
-    speedInsights: z.boolean(),
+    /** Web Analytics Vercel: единственный внешний скрипт, разрешённый в CSP. */
+    analytics: z.boolean(),
     themeSwitcher: z.boolean(),
     /** Вкладка и секция архитектуры в карточках и на странице кейса. */
     projectArchitecture: z.boolean(),

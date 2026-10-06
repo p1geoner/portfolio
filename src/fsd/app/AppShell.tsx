@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { NextIntlClientProvider } from 'next-intl';
 import type { PropsWithChildren } from 'react';
 
@@ -55,6 +56,7 @@ export const AppShell = ({ children, locale }: IAppShellProps) => {
             <SiteFooter />
             <BackToTop />
           </div>
+          {site.features.analytics ? <Analytics /> : null}
         </NextIntlClientProvider>
       </body>
     </html>

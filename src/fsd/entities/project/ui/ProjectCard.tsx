@@ -19,6 +19,10 @@ import type { TProject } from '../model/schema';
 
 const VISIBLE_STACK_COUNT = 4;
 
+/** Верх карточки: рамка сидит в карточке, медиа скруглено ещё слабее. */
+const COVER_FRAME_CLASS =
+  'rounded-b-none border-0 border-b border-[var(--border-subtle)] !rounded-t-[calc(var(--radius-card)-var(--radius-stroke))] ![--frame-radius:calc(var(--radius-card)-var(--radius-stroke))_calc(var(--radius-card)-var(--radius-stroke))_0px_0px] ![--media-radius:calc(var(--radius-card)-var(--radius-stroke)-var(--radius-media-inset))_calc(var(--radius-card)-var(--radius-stroke)-var(--radius-media-inset))_0px_0px]';
+
 type ProjectCardProps = {
   project: TProject;
   /** Первая карточка в сетке грузит обложку без ленивой загрузки. */
@@ -70,7 +74,7 @@ export const ProjectCard = ({
               seed={project.slug}
               label={t('mediaPlaceholder')}
               className={clsx(
-                'rounded-b-none border-0 border-b border-[var(--border-subtle)]',
+                COVER_FRAME_CLASS,
                 featured && 'aspect-[16/9]'
               )}
             />
@@ -86,7 +90,7 @@ export const ProjectCard = ({
                   : '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
               }
               className={clsx(
-                'rounded-b-none border-0 border-b border-[var(--border-subtle)]',
+                COVER_FRAME_CLASS,
                 featured ? 'aspect-[16/9]' : 'aspect-[16/10]'
               )}
             />

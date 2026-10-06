@@ -134,57 +134,7 @@ export const navigatorCareerProject = {
       },
     },
   ],
-  metrics: [
-    {
-      id: 'lcp',
-      value: { ru: '4.9 с → 1.4 с', en: '4.9s → 1.4s' },
-      label: { ru: 'LCP на мобильных', en: 'Mobile LCP' },
-      hint: {
-        ru: 'Оценка по замерам Lighthouse до и после переноса рендера на сервер.',
-        en: 'Estimated from Lighthouse runs before and after moving rendering to the server.',
-      },
-      estimated: true,
-    },
-    {
-      id: 'lighthouse',
-      value: { ru: '38 → 92', en: '38 → 92' },
-      label: {
-        ru: 'Lighthouse Performance',
-        en: 'Lighthouse performance',
-      },
-      hint: {
-        ru: 'Мобильный прогон главной и страницы вакансии.',
-        en: 'Mobile run on the home page and a vacancy page.',
-      },
-      estimated: true,
-    },
-    {
-      id: 'indexed',
-      value: { ru: '×14', en: '×14' },
-      label: {
-        ru: 'рост числа индексируемых страниц',
-        en: 'growth in indexable pages',
-      },
-      hint: {
-        ru: 'До миграции в индекс попадали единицы статических страниц, после — все карточки сущностей из карты сайта.',
-        en: 'Before the migration only a handful of static pages were indexed; afterwards every entity page from the sitemap.',
-      },
-      estimated: true,
-    },
-    {
-      id: 'search-traffic',
-      value: { ru: '+180%', en: '+180%' },
-      label: {
-        ru: 'поисковый трафик за 6 месяцев',
-        en: 'search traffic over 6 months',
-      },
-      hint: {
-        ru: 'По данным аналитики после публикации карты сайта и серверных метаданных.',
-        en: 'Based on analytics after the sitemap and server-side metadata went live.',
-      },
-      estimated: true,
-    },
-  ],
+  metrics: [],
   media: {
     cover: {
       kind: 'video',

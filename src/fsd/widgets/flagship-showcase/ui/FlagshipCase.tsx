@@ -11,7 +11,6 @@ import {
   Badge,
   ButtonLink,
   LockIcon,
-  Magnetic,
 } from '@/shared/ui';
 
 import { CaseContentSlider } from './CaseContentSlider';
@@ -59,12 +58,10 @@ export const FlagshipCase = ({
         </p>
 
         <div className={styles.actions}>
-          <Magnetic durationMs={720} strength={0.55}>
-            <ButtonLink href={`/projects/${project.slug}`}>
-              {t('showcase.openCase')}
-              <ArrowRightIcon width={14} height={14} />
-            </ButtonLink>
-          </Magnetic>
+          <ButtonLink href={`/projects/${project.slug}`}>
+            {t('showcase.openCase')}
+            <ArrowRightIcon width={14} height={14} />
+          </ButtonLink>
         </div>
       </div>
 

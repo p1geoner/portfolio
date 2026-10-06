@@ -32,6 +32,10 @@ const PANELS_WITHOUT_ARCHITECTURE: readonly TPanelId[] = PANEL_IDS.filter(
 const DRAG_THRESHOLD = 48;
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+/** Рамка повторяет вьюпорт, само медиа скруглено слабее — на обводку и отступ угла. */
+const COVER_FRAME_CLASS =
+  '!aspect-auto h-full min-h-full border-0 !rounded-[calc(var(--radius-card)+0.15rem-var(--radius-stroke))] ![--frame-radius:calc(var(--radius-card)+0.15rem-var(--radius-stroke))] ![--media-radius:calc(var(--radius-card)+0.15rem-var(--radius-stroke)-var(--radius-media-inset))]';
+
 type ICaseContentSliderProps = {
   project: TProject;
   stackLabels: ReadonlyMap<string, string>;
@@ -111,7 +115,7 @@ export const CaseContentSlider = ({
           <MediaPlaceholder
             seed={project.slug}
             label={t('mediaPlaceholder')}
-            className='!aspect-auto h-full min-h-full rounded-none border-0'
+            className={COVER_FRAME_CLASS}
           />
         ) : (
           <MediaFrame
@@ -120,7 +124,7 @@ export const CaseContentSlider = ({
             priority={priority}
             autoPlay={project.media.cover.kind === 'video'}
             sizes='(min-width: 1024px) 40vw, 100vw'
-            className='!aspect-auto h-full min-h-full rounded-none border-0'
+            className={COVER_FRAME_CLASS}
           />
         );
       case 'highlights':

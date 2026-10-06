@@ -20,7 +20,14 @@ type MediaFrameProps = {
 };
 
 const FRAME_CLASS =
-  'relative overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-sunken)]';
+  'relative isolate overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-sunken)] [--frame-radius:var(--radius-card)] [--media-radius:calc(var(--frame-radius)-var(--radius-stroke)-var(--radius-media-inset))]';
+
+/**
+ * border-radius на figure не обрезает кадр video: слой видео рисуется квадратом.
+ * clip-path режет медиа меньшим радиусом, чем рамка: внешний угол минус обводка и отступ.
+ */
+const MEDIA_CLASS =
+  'h-full w-full rounded-[var(--media-radius)] object-cover [clip-path:inset(0_round_var(--media-radius))]';
 
 export const MediaFrame = ({
   asset,
@@ -140,7 +147,7 @@ export const MediaFrame = ({
       <figure className={clsx(FRAME_CLASS, className)}>
         <video
           ref={videoRef}
-          className='h-full w-full object-cover'
+          className={MEDIA_CLASS}
           poster={asset.poster}
           preload={autoPlay ? 'metadata' : 'none'}
           controls={!autoPlay}
@@ -174,7 +181,7 @@ export const MediaFrame = ({
         loading={priority ? undefined : 'lazy'}
         // Анимацию gif оптимизатор изображений вырезает, поэтому отдаём как есть.
         unoptimized={asset.kind === 'gif'}
-        className='h-full w-full object-cover'
+        className={MEDIA_CLASS}
       />
       {asset.caption ? (
         <figcaption className='px-4 py-3 text-sm text-[var(--text-muted)]'>
