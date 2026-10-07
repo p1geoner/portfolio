@@ -25,10 +25,10 @@
   --color-accent-strong: #9a3412;
   --color-support: #0f766e;
   --radius-card: 1rem;
+  --radius-shell: calc(var(--radius-card) + 0.15rem);
   --radius-pill: 999px;
-  /* Вложенный радиус = внешний − обводка − отступ угла. */
+  /* Обводка рамки. Радиус медиа всегда равен половине внешнего. */
   --radius-stroke: 1px;
-  --radius-media-inset: 0.5rem;
   --shadow-soft:
     0 1px 2px rgb(20 19 15 / 3%), 0 12px 32px -18px rgb(20 19 15 / 12%);
   --shadow-lift:

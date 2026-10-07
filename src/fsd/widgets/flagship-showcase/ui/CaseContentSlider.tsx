@@ -32,9 +32,9 @@ const PANELS_WITHOUT_ARCHITECTURE: readonly TPanelId[] = PANEL_IDS.filter(
 const DRAG_THRESHOLD = 48;
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-/** Рамка повторяет вьюпорт, само медиа скруглено слабее — на обводку и отступ угла. */
+/** Вьюпорт — внешний радиус, кадр внутри ровно вдвое слабее. */
 const COVER_FRAME_CLASS =
-  '!aspect-auto h-full min-h-full border-0 !rounded-[calc(var(--radius-card)+0.15rem-var(--radius-stroke))] ![--frame-radius:calc(var(--radius-card)+0.15rem-var(--radius-stroke))] ![--media-radius:calc(var(--radius-card)+0.15rem-var(--radius-stroke)-var(--radius-media-inset))]';
+  '!aspect-auto h-full min-h-full border-0 !rounded-[calc(var(--radius-shell)-var(--radius-stroke))] ![--frame-radius:var(--radius-shell)] ![--media-radius:calc(var(--radius-shell)/2)]';
 
 type ICaseContentSliderProps = {
   project: TProject;

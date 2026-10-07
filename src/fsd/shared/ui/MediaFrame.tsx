@@ -20,11 +20,11 @@ type MediaFrameProps = {
 };
 
 const FRAME_CLASS =
-  'relative isolate overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-sunken)] [--frame-radius:var(--radius-card)] [--media-radius:calc(var(--frame-radius)-var(--radius-stroke)-var(--radius-media-inset))]';
+  'relative isolate overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-sunken)] [--frame-radius:var(--radius-card)] [--media-radius:calc(var(--frame-radius)/2)]';
 
 /**
  * border-radius на figure не обрезает кадр video: слой видео рисуется квадратом.
- * clip-path режет медиа меньшим радиусом, чем рамка: внешний угол минус обводка и отступ.
+ * clip-path режет медиа вдвое слабее рамки.
  */
 const MEDIA_CLASS =
   'h-full w-full rounded-[var(--media-radius)] object-cover [clip-path:inset(0_round_var(--media-radius))]';

@@ -8,3 +8,4 @@ export {
 export type { TThemeMode } from './constants';
 export { getThemeScript } from './themeScript';
 export { applyThemeMode, readThemeMode, resolveTheme } from './applyTheme';
+export { ThemePersistence } from './ThemePersistence';

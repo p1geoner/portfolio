@@ -11,7 +11,7 @@
   flex: 1;
   min-height: 16rem;
   overflow: hidden;
-  border-radius: calc(var(--radius-card) + 0.15rem);
+  border-radius: var(--radius-shell);
   border: 1px solid color-mix(in oklab, var(--border-subtle) 70%, transparent);
   background: linear-gradient(
     160deg,

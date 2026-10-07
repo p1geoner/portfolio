@@ -19,9 +19,9 @@ import type { TProject } from '../model/schema';
 
 const VISIBLE_STACK_COUNT = 4;
 
-/** Верх карточки: рамка сидит в карточке, медиа скруглено ещё слабее. */
+/** Верх карточки: внешний радиус у карточки, у обложки — половина. */
 const COVER_FRAME_CLASS =
-  'rounded-b-none border-0 border-b border-[var(--border-subtle)] !rounded-t-[calc(var(--radius-card)-var(--radius-stroke))] ![--frame-radius:calc(var(--radius-card)-var(--radius-stroke))_calc(var(--radius-card)-var(--radius-stroke))_0px_0px] ![--media-radius:calc(var(--radius-card)-var(--radius-stroke)-var(--radius-media-inset))_calc(var(--radius-card)-var(--radius-stroke)-var(--radius-media-inset))_0px_0px]';
+  'rounded-b-none border-0 border-b border-[var(--border-subtle)] !rounded-t-[calc(var(--radius-card)-var(--radius-stroke))] ![--frame-radius:var(--radius-card)] ![--media-radius:calc(var(--radius-card)/2)_calc(var(--radius-card)/2)_0px_0px]';
 
 type ProjectCardProps = {
   project: TProject;

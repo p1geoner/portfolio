@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react';
 
 import { getHeaderNavigation, getSiteConfig } from '@/shared/config';
 import { type TLocale, getHtmlLang } from '@/shared/content';
-import { getThemeScript } from '@/shared/theme';
+import { ThemePersistence, getThemeScript } from '@/shared/theme';
 import { BackToTop, ScrollProgress, SmoothScroll } from '@/shared/ui';
 import { AmbientBackground } from '@/widgets/ambient-background';
 import { SiteFooter } from '@/widgets/site-footer';
@@ -40,6 +40,7 @@ export const AppShell = ({ children, locale }: IAppShellProps) => {
       </head>
       <body className='relative flex min-h-dvh flex-col antialiased'>
         <NextIntlClientProvider>
+          <ThemePersistence />
           <SmoothScroll />
           <AmbientBackground />
           <ScrollProgress />
